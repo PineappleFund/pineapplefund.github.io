@@ -11,9 +11,16 @@ header {
   background-position: 0 -50px;
 }
 
-@media (min-width: 992px) {
+@media (max-width: 992px) {
   header {
-    padding: 226px 0 170px;
+    background-position: 0 0;
+  }
+}
+
+@media (max-width: 650px) {
+  header {
+    padding: 140px 0 50px;
+    background-position: 0 0;
   }
 }
 
