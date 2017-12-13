@@ -5,15 +5,118 @@
  */
 
 header {
-  padding: 154px 0 100px;
+  padding: 224px 0 170px;
+  background: url(../img/pineapple-header.jpg);
+  background-size: cover;
+  background-position: 0 -50px;
 }
 
 @media (min-width: 992px) {
   header {
-    padding: 156px 0 100px;
+    padding: 226px 0 170px;
   }
 }
 
 section {
-  padding: 150px 0;
+  padding: 45px 0;
+}
+
+body {
+  color: #1f631a;
+}
+
+.text-shadow {
+    text-shadow: 1px 1px 5px #215018;
+}
+
+.brand-logo {
+  height: 48px;
+  margin-top: -5px;
+}
+
+.bg-dark.bg-dark {
+  background-color: #FFCB18 !important;
+}
+
+.navbar-dark .navbar-brand {
+  color: #1f631a !important;
+  font-size: 1.5rem;
+  margin-top: 5px;
+}
+
+.bg-primary {
+  background-color: #EAF8BF !important;
+}
+
+.metrics {
+  margin: 25px 0;
+}
+
+.metrics .col-sm {
+  background-color: #FFCB18;
+  margin: 0 10px 0 0;
+  padding: 15px 20px;
+}
+
+.metrics-number {
+  font-size: 1.5rem;
+  color: #FFF;
+  font-weight: bold;
+  display: block;
+}
+
+.metrics-convert {
+  color: #FFF;
+  display: block;
+}
+
+.charities {
+  text-align: center;
+  margin-left: -20px;
+  margin-right: -20px;
+}
+
+.charity {
+  display: inline-block;
+  width: 160px;
+  height: 100px;
+  margin: 14px;
+  text-align: center;
+}
+
+.charity .logo {
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  width: 160px;
+  height: 80px;
+  margin-bottom: 10px;
+}
+
+.charity img {
+  max-width: 160px;
+  max-height: 70px;
+}
+
+.charity .money {
+  margin: 5px 0;
+  background-color: #FFCB18;
+  text-align: center;
+}
+
+.charity .links {
+  font-size: 0.75rem;
+}
+
+.charity .links a {
+  margin-right: 4px;
+}
+
+#faq .q {
+  font-size: 1.15rem;
+  margin: 0 0 10px 0;
+}
+
+#faq .a {
+  margin: 0 0 15px 25px;
 }

@@ -8,13 +8,15 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Scrolling Nav - Start Bootstrap Template</title>
+    <title>🍍 Pineapple Fund</title>
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="css/scrolling-nav.css" rel="stylesheet">
+
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon" />
 
   </head>
 
@@ -23,7 +25,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
       <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="#page-top">Start Bootstrap</a>
+        <a class="navbar-brand js-scroll-trigger" href="#page-top"><img src='img/pineapple.png' class='brand-logo' /> Pineapple Fund</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -33,8 +35,15 @@
               <a class="nav-link js-scroll-trigger" href="#about">About</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#services">Services</a>
+              <a class="nav-link js-scroll-trigger" href="#charities">Charities</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#apply">Apply</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#faq">FAQ</a>
+            </li>
+
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
             </li>
@@ -43,10 +52,10 @@
       </div>
     </nav>
 
-    <header class="bg-primary text-white">
-      <div class="container text-center">
-        <h1>Welcome to Scrolling Nav</h1>
-        <p class="lead">A landing page template freshly redesigned for Bootstrap 4</p>
+    <header>
+      <div class="container text-center text-white text-shadow">
+        <h1>Donating $86 million of bitcoins to charity</h1>
+        <p class="lead">Once you have enough money, money doesn't matter.</p>
       </div>
     </header>
 
@@ -54,36 +63,113 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-8 mx-auto">
-            <h2>About this page</h2>
-            <p class="lead">This is a great place to talk about your webpage. This template is purposefully unstyled so you can use it as a boilerplate or starting point for you own landing page designs! This template features:</p>
-            <ul>
-              <li>Clickable nav links that smooth scroll to page sections</li>
-              <li>Responsive behavior when clicking nav links perfect for a one page website</li>
-              <li>Bootstrap's scrollspy feature which highlights which section of the page you're on in the navbar</li>
-              <li>Minimal custom CSS so you are free to explore your own unique design options</li>
-            </ul>
+            <h2>About</h2>
+            <p class="lead">With bitcoin reaching new heights, we're looking to donate a massive amount of BTC to charities and causes all around the world.</p>
+            
+            <div class="container metrics">
+              <div class="row">
+                <div class="col-sm">
+                  <span class="metrics-number">5,057 BTC</span>
+                  <span class="metrics-convert">~$86 million USD</span>
+                  total committed
+                </div>
+                <div class="col-sm">
+                  <span class="metrics-number">4,894 BTC</span>
+                  <span class="metrics-convert">~$84 million USD</span>
+                  remaining
+                </div>
+                <div class="col-sm">
+                  <span class="metrics-number">4</span> charities supported so far
+                </div>
+              </div>
+            </div>
+
+            <p>View the address: <a href='https://live.blockcypher.com/btc/address/3P3QsMVK89JBNqZQv5zMAKG8FK3kJM4rjt/'>3P3QsMVK89JBNqZQv5zMAKG8FK3kJM4rjt</a></p>
+            <p>View the proof of ownership: <a href='https://live.blockcypher.com/btc/tx/c44ad5f83ddc84d08967c7652311f0a23aafa8e54d7db0911a2c7b5bc20ff988/'>Encoded message</a></p>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="services" class="bg-light">
+    <section id="charities" class="bg-primary">
       <div class="container">
         <div class="row">
           <div class="col-lg-8 mx-auto">
-            <h2>Services we offer</h2>
-            <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut optio velit inventore, expedita quo laboriosam possimus ea consequatur vitae, doloribus consequuntur ex. Nemo assumenda laborum vel, labore ut velit dignissimos.</p>
+            <h2>Charities supported</h2>
+            <p class="lead">These are the charities we've donated to so far.</p>
+
+            <div class="charities">
+              <div class="charity">
+                <a href="https://watsi.org/" class="logo"><img src="img/watsi.png" /></a>
+                <div class="money">$1 million</div>
+                <div class="links"><a href="https://blockchain.info/tx/d290acbfa7c619ad4215537ae83bfe165902b1c232fda1a360edaf1428acd80a">tx</a><a href="https://watsi.org/">website</a></div>
+              </div>
+
+              <div class="charity">
+                <a href="https://thewaterproject.org" class="logo"><img src="img/thewaterproject.png" /></a>
+                <div class="money">$1 million</div>
+                <div class="links"><a href="https://blockchain.info/tx/da2b84e3f3c0c2adec21105e7f5630d6e74c4c3408ddd7324edaa9f7de0e11da">tx</a> <a href="https://thewaterproject.org">website</a></div>
+              </div>
+              <div class="charity">
+                <a href="https://www.bitgivefoundation.org/" class="logo"><img src="img/bitgive.png" /></a>
+                <div class="money">$500k</div>
+                <div class="links"><a href="https://blockchain.info/tx/8ddfe1401f80b796f555d03d7efd0c202c3c33ab2f5f04c85961cd4751ab456c">tx</a> <a href="https://www.bitgivefoundation.org/">website</a></div>
+              </div>
+              <div class="charity">
+                <a href="https://www.eff.org" class="logo"><img src="img/eff.png" /></a>
+                <div class="money" data-toggle="tooltip" data-placement="bottom" data-original-title="$50k donated so far, $950k remaining">$1 million*</div>
+                <div class="links"><a href="https://blockchain.info/tx/d3cf5847391aec3b89e61b9a32bf38ab40ef3a0b3328ee640b609c6d1f349dd0">tx</a> <a href="https://www.eff.org">website</a></div>
+              </div>
+            </div>
+            <p></p>
+            <p><small>The Pineapple Fund is not affiliated with any supported charity.</small></p>
+          </div>
+        </div>
+      </div>    </section>
+
+    <section id="apply">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+            <h2>Apply</h2>
+            <p class="lead">Our criteria is simple. The Pineapple Fund supports a diverse range of charitable causes worldwide.</p>
+            <p>Your organization should be a registered nonprofit organization in your country. In <em>exceptional</em> circumstances, we may make exceptions. You're welcome to apply.</p>
+            <p>We will transfer the donation 'in-kind' via bitcoin. Don't know how to accept and convert? We can help!</p>
+            <p><strong><a href="https://formlets.com/forms/ikppeNKjuxeHzzba/">Apply today via our form</a></strong></p>
           </div>
         </div>
       </div>
     </section>
 
+
+    <section id="faq" class="bg-primary">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+            <h2>FAQ</h2>
+            <p class="q">Who are you?</p>
+            <p class="a">Sometime around the early days of bitcoin, I saw the promise of decentralized money and decided to mine/buy/trade some magical internet tokens. The expectation shattering returns of bitcoin over many years has lead to an amount far more than I can spend.</p>
+            <p class="a">What do you do when you have more money than you can ever possibly spend? Donating most of it to charity is the option I'm taking.</p>
+            <p class="q">How many bitcoins do you have?</p>
+            <p class="a">The Pineapple Fund represents a majority of my cryptocurrency holdings.</p>
+            <p class="q">Why are you remaining anonymous?</p>
+            <p class="a">Firstly, publicity has never been the point of this fund.</p>
+            <p class="a">The more bitcoin goes up, the more worried I am of my safety. I'd like to live a very low profile life, and most people in my life don't even know the magnitude of bitcoins I have.</p>
+            <p class="q">I'm an individual. Can I get some bitcoins?</p>
+            <p class="a">The short answer is no.</p>
+            <p class="a">The long answer is if you have an actual cause (for example, to support operating costs of an open source project; a fundraiser for medical bills of a serious tragedy; etc) you are welcome to apply via the form. However, don't have your hopes up.</p>
+            <p class="q">Why the name, Pineapple Fund?</p>
+            <p class="a">I like pineapple. The only bad thing about pineapple is you can't eat too much :(</p>
+          </div>
+        </div>
+      </div>
+    </section>
     <section id="contact">
       <div class="container">
         <div class="row">
           <div class="col-lg-8 mx-auto">
-            <h2>Contact us</h2>
-            <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero odio fugiat voluptatem dolor, provident officiis, id iusto! Obcaecati incidunt, qui nihil beatae magnam et repudiandae ipsa exercitationem, in, quo totam.</p>
+            <h2>Contact</h2>
+            <p class="lead">You can email contact at this domain. We'll get back to you as soon as we can.</p>
           </div>
         </div>
       </div>
@@ -92,7 +178,7 @@
     <!-- Footer -->
     <footer class="py-5 bg-dark">
       <div class="container">
-        <p class="m-0 text-center text-white">Copyright &copy; Your Website 2017</p>
+        <p class="m-0 text-center">The Pineapple Fund, 2017<br />Hosted by GitHub Pages. Logo based off EmojiOne</p>
       </div>
       <!-- /.container -->
     </footer>
