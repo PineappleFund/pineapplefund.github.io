@@ -18,6 +18,70 @@
 
     <link rel="shortcut icon" href="favicon.png" type="image/x-icon" />
 
+    <script src="vendor/jquery/jquery.min.js"></script>
+
+    <script>
+      function Charity(websiteLink, logoFileName, txIds, totalDonation, donatedSoFar) {
+        this.websiteLink = websiteLink;
+        this.logoFileName = logoFileName;
+        this.txIds = txIds;
+        this.totalDonation = totalDonation;
+        this.donatedSoFar = donatedSoFar;
+      }
+
+      const charities = [
+        new Charity('https://watsi.org', 'watsi.png', ['d290acbfa7c619ad4215537ae83bfe165902b1c232fda1a360edaf1428acd80a'], 1000000, 1000000),
+        new Charity('https://thewaterproject.org', 'thewaterproject.png', ['da2b84e3f3c0c2adec21105e7f5630d6e74c4c3408ddd7324edaa9f7de0e11da'], 1000000, 1000000),
+        new Charity('https://www.bitgivefoundation.org/', 'bitgive.png', ['8ddfe1401f80b796f555d03d7efd0c202c3c33ab2f5f04c85961cd4751ab456c'], 500000, 500000),
+        new Charity('https://www.eff.org', 'eff.png', ['d3cf5847391aec3b89e61b9a32bf38ab40ef3a0b3328ee640b609c6d1f349dd0', 'f88224185d0567d7dcc0456cd0d67a83fb19e5cc33b56e8924d74e97b62661e5'], 1000000, 130000),
+        new Charity('http://www.maps.org/', 'maps.svg', ['f88224185d0567d7dcc0456cd0d67a83fb19e5cc33b56e8924d74e97b62661e5'], 1000000, 1000000),
+        new Charity('http://www.openbsdfoundation.org/', 'openbsd.gif', ['bdc392696e0e2d552e91f3ce2209483ff7aaa5e613a8b6b89ddc7bb743c13949'], 50000, 10000)
+      ];
+
+      const remainingBTC = 4830;
+      const charitiesSupported = charities.length;
+
+      function formatNumber(value, unit) {
+        if(unit === '$') {
+          value = value.toString();
+          if(value.length > 6) {
+            value = value.replace(/000000$/, ' million');
+          } else {
+            value = value.replace(/000$/, 'k');
+          }
+          return '$' + value;
+        } else if(unit === 'BTC') {
+          return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',') + ' BTC';
+        }
+      }
+
+      function formatTxs(txIds) {
+        if(txIds.length === 1) {
+          return "<a href='https://blockchain.info/tx/" + txIds[0] + "'>tx</a>";
+        }
+        txLinks = 'tx';
+        for(i = 1; i <= txIds.length; i++) {
+          txLinks += "<sup><a href='https://blockchain.info/tx/" + txIds[i] + "'>" + i + "</a></sup>";
+        }
+        return txLinks;
+      }
+
+      function formatMoneyDiv(totalDonation, donatedSoFar) {
+        if(totalDonation === donatedSoFar) {
+          return "<div class='money'>" + formatNumber(totalDonation, '$') + "</div>";
+        }
+        return "<div class='money' data-toggle='tooltip' data-placement='bottom' data-original-title='" + formatNumber(donatedSoFar, '$') + " donated so far, " + formatNumber(totalDonation - donatedSoFar, '$') + " remaining'>" + formatNumber(totalDonation, '$') + "*</div>";
+      }
+
+      $(function() {
+        $('#remaining-btc').text(formatNumber(remainingBTC, 'BTC'));
+        $('#charities-supported').text(charitiesSupported);
+
+        charities.forEach(function(charity) {
+          $('.charities').append("<div class='charity'><a href='" + charity.websiteLink + "' class='logo'><img src='img/" + charity.logoFileName + "' /></a>" + formatMoneyDiv(charity.totalDonation, charity.donatedSoFar) + "<div class='links'>" + formatTxs(charity.txIds) + " <a href='" + charity.websiteLink + "'>website</a></div></div> ");
+        });
+      });
+    </script>
   </head>
 
   <body id="page-top">
@@ -74,12 +138,12 @@
                   total committed
                 </div>
                 <div class="col-sm">
-                  <span class="metrics-number">4,830 BTC</span>
+                  <span class="metrics-number" id="remaining-btc"></span>
                   <span class="metrics-convert">~$81 million USD</span>
                   remaining
                 </div>
                 <div class="col-sm">
-                  <span class="metrics-number">6</span> charities supported so far
+                  <span class="metrics-number" id="charities-supported"></span> charities supported so far
                 </div>
               </div>
             </div>
@@ -97,40 +161,7 @@
           <div class="col-lg-8 mx-auto">
             <h2>Charities supported</h2>
             <p class="lead">These are the charities we've donated to so far.</p>
-
-            <div class="charities">
-              <div class="charity">
-                <a href="https://watsi.org/" class="logo"><img src="img/watsi.png" /></a>
-                <div class="money">$1 million</div>
-                <div class="links"><a href="https://blockchain.info/tx/d290acbfa7c619ad4215537ae83bfe165902b1c232fda1a360edaf1428acd80a">tx</a><a href="https://watsi.org/">website</a></div>
-              </div>
-
-              <div class="charity">
-                <a href="https://thewaterproject.org" class="logo"><img src="img/thewaterproject.png" /></a>
-                <div class="money">$1 million</div>
-                <div class="links"><a href="https://blockchain.info/tx/da2b84e3f3c0c2adec21105e7f5630d6e74c4c3408ddd7324edaa9f7de0e11da">tx</a> <a href="https://thewaterproject.org">website</a></div>
-              </div>
-              <div class="charity">
-                <a href="https://www.bitgivefoundation.org/" class="logo"><img src="img/bitgive.png" /></a>
-                <div class="money">$500k</div>
-                <div class="links"><a href="https://blockchain.info/tx/8ddfe1401f80b796f555d03d7efd0c202c3c33ab2f5f04c85961cd4751ab456c">tx</a> <a href="https://www.bitgivefoundation.org/">website</a></div>
-              </div>
-              <div class="charity">
-                <a href="https://www.eff.org" class="logo"><img src="img/eff.png" /></a>
-                <div class="money" data-toggle="tooltip" data-placement="bottom" data-original-title="$130k donated so far, $870k remaining">$1 million*</div>
-                <div class="links">tx<sup><a href="https://blockchain.info/tx/d3cf5847391aec3b89e61b9a32bf38ab40ef3a0b3328ee640b609c6d1f349dd0">1</a><a href="https://blockchain.info/tx/f88224185d0567d7dcc0456cd0d67a83fb19e5cc33b56e8924d74e97b62661e5/">2</a></sup> <a href="https://www.eff.org">website</a></div>
-              </div>
-              <div class="charity">
-                <a href="http://www.maps.org/" class="logo"><img src="img/maps.svg" /></a>
-                <div class="money">$1 million</div>
-                <div class="links"><a href="https://blockchain.info/tx/f88224185d0567d7dcc0456cd0d67a83fb19e5cc33b56e8924d74e97b62661e5/">tx</a> <a href="http://www.maps.org">website</a></div>
-              </div>
-              <div class="charity">
-                <a href="http://www.openbsdfoundation.org/" class="logo"><img src="img/openbsd.gif" /></a>
-                <div class="money" data-toggle="tooltip" data-placement="bottom" data-original-title="$10k donated so far, $40k remaining">$50k*</div>
-                <div class="links"><a href="https://blockchain.info/tx/bdc392696e0e2d552e91f3ce2209483ff7aaa5e613a8b6b89ddc7bb743c13949">tx</a> <a href="http://www.openbsdfoundation.org/">website</a></div>
-              </div>
-            </div>
+            <div class="charities"></div>
             <p></p>
             <p><small>The Pineapple Fund is not affiliated with any supported charity.</small></p>
           </div>
@@ -192,7 +223,6 @@
     </footer>
 
     <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <!-- Plugin JavaScript -->
