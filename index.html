@@ -35,7 +35,9 @@
         new Charity('https://www.bitgivefoundation.org/', 'bitgive.png', ['8ddfe1401f80b796f555d03d7efd0c202c3c33ab2f5f04c85961cd4751ab456c'], 500000, 500000),
         new Charity('https://www.eff.org', 'eff.png', ['d3cf5847391aec3b89e61b9a32bf38ab40ef3a0b3328ee640b609c6d1f349dd0', 'f88224185d0567d7dcc0456cd0d67a83fb19e5cc33b56e8924d74e97b62661e5'], 1000000, 130000),
         new Charity('http://www.maps.org/', 'maps.svg', ['f88224185d0567d7dcc0456cd0d67a83fb19e5cc33b56e8924d74e97b62661e5'], 1000000, 1000000),
-        new Charity('http://www.openbsdfoundation.org/', 'openbsd.gif', ['bdc392696e0e2d552e91f3ce2209483ff7aaa5e613a8b6b89ddc7bb743c13949'], 50000, 10000)
+        new Charity('http://www.openbsdfoundation.org/', 'openbsd.gif', ['bdc392696e0e2d552e91f3ce2209483ff7aaa5e613a8b6b89ddc7bb743c13949', 'dfa660099d52f8d2a6bb3230a96699153073430d1790bd82492955fe2c17ffe6'], 50000, 20000),
+        new Charity('http://www.sens.org', 'sens.png', ['10dd3b4bb12eb9235fcc635aa60429a97da570eb915c0063c9a771afa0917b29'], 1000000, 1000000),
+        new Charity('https://www.charitywater.org/', 'charitywater.png', ['2a4924f879e0e2d52f6365eedb6413d6a0edbd86ddd8f48fb21b50348335543a'], 1000000, 1000000)
       ];
 
       const remainingBTC = 4830;
@@ -60,8 +62,8 @@
           return "<a href='https://blockchain.info/tx/" + txIds[0] + "'>tx</a>";
         }
         txLinks = 'tx';
-        for(i = 1; i <= txIds.length; i++) {
-          txLinks += "<sup><a href='https://blockchain.info/tx/" + txIds[i] + "'>" + i + "</a></sup>";
+        for(i = 0; i < txIds.length; i++) {
+          txLinks += "<sup><a href='https://blockchain.info/tx/" + txIds[i] + "'>" + (i+1) + "</a></sup>";
         }
         return txLinks;
       }
@@ -139,7 +141,7 @@
                 </div>
                 <div class="col-sm">
                   <span class="metrics-number" id="remaining-btc"></span>
-                  <span class="metrics-convert">~$81 million USD</span>
+                  <span class="metrics-convert">~$84 million USD</span>
                   remaining
                 </div>
                 <div class="col-sm">
@@ -161,7 +163,9 @@
           <div class="col-lg-8 mx-auto">
             <h2>Charities supported</h2>
             <p class="lead">These are the charities we've donated to so far.</p>
-            <div class="charities"></div>
+            <div class="charities">
+              <noscript><h1>You need JavaScript to view the charities we've supported</h1></noscript>
+            </div>
             <p></p>
             <p><small>The Pineapple Fund is not affiliated with any supported charity.</small></p>
           </div>
