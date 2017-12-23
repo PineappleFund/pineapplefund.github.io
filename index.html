@@ -45,7 +45,6 @@
         new Charity('https://www.greenstepschatt.com/', 'greensteps.png', ['d5e87e185438d98802921736ff3b37652834e1b51bc491462d5fd66d855066be'], 100000, 100000)
       ];
 
-      const remainingBTC = 4540;
       const charitiesSupported = charities.length;
 
       function formatNumber(value, unit) {
@@ -81,7 +80,6 @@
       }
 
       $(function() {
-        $('#remaining-btc').text(formatNumber(remainingBTC, 'BTC'));
         $('#charities-supported').text(charitiesSupported);
 
         charities.forEach(function(charity) {
@@ -145,8 +143,8 @@
                   total committed
                 </div>
                 <div class="col-sm">
-                  <span class="metrics-number" id="remaining-btc"></span>
-                  <span class="metrics-convert">~$67 million USD</span>
+                  <span class="metrics-number" id="remaining-btc">4,400 BTC</span>
+                  <span class="metrics-convert">~$68 million USD</span>
                   remaining
                 </div>
                 <div class="col-sm">
