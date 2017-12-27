@@ -83,6 +83,9 @@
       $(function() {
         $('#charities-supported').text(charitiesSupported);
 
+        const fundedSoFar = charities.map(c => c.donatedSoFar).reduce((a, b) => a + b, 0);
+        $("#remaining-usd").text('$' + fundedSoFar.toLocaleString());
+
         charities.forEach(function(charity) {
           $('.charities').append("<div class='charity'><a href='" + charity.websiteLink + "' class='logo'><img src='img/" + charity.logoFileName + "' /></a>" + formatMoneyDiv(charity.totalDonation, charity.donatedSoFar) + "<div class='links'>" + formatTxs(charity.txIds) + " <a href='" + charity.websiteLink + "'>website</a></div></div> ");
         });
@@ -144,9 +147,8 @@
                   total committed
                 </div>
                 <div class="col-sm">
-                  <span class="metrics-number" id="remaining-btc">4,079 BTC</span>
-                  <span class="metrics-convert">~$64 million USD</span>
-                  remaining
+                  <span class="metrics-number" id="remaining-usd"></span>
+                  donated so far
                 </div>
                 <div class="col-sm">
                   <span class="metrics-number" id="charities-supported"></span> charities supported so far
