@@ -144,3 +144,16 @@ blockquote:before {
   margin-right: 0.25em;
   vertical-align: -0.4em;
 }
+
+#banner {
+    background-color: #add23d;
+    font-size: 22px;
+    padding: 20px 0;
+  text-align: center;
+
+}
+
+#banner a {
+  color: #FFF !important;
+  font-weight: bold;
+}
