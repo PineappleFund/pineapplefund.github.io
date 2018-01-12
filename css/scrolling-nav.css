@@ -86,9 +86,9 @@ body {
 .charity {
   display: inline-block;
   width: 160px;
-  height: 100px;
   margin: 14px;
   text-align: center;
+  vertical-align: top;
 }
 
 .charity .logo {
