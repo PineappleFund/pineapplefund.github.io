@@ -21,12 +21,13 @@
     <script src="vendor/jquery/jquery.min.js"></script>
 
     <script>
-      function Charity(websiteLink, logoFileName, txIds, totalDonation, donatedSoFar) {
+      function Charity(websiteLink, logoFileName, txIds, totalDonation, donatedSoFar, isNonprofit = true) {
         this.websiteLink = websiteLink;
         this.logoFileName = logoFileName;
         this.txIds = txIds;
         this.totalDonation = totalDonation;
         this.donatedSoFar = donatedSoFar;
+        this.isNonprofit = isNonprofit;
       }
 
       const charities = [
@@ -54,7 +55,8 @@
         new Charity('https://sfconservancy.org/', 'sfc.png', ['0259d2ac1dbc12b3b4fb531c93203508f9c6116cdebc9c651a3c86cd930ffb15'], 250000, 250000),
         new Charity('http://neuralarchivesfoundation.org/', 'naf.png', ['725df702b8ca6d34e0ffd84c87fb20332bbaf1f3ab308e22e4c99e799d8966b3'], 250000, 250000),
         new Charity('https://www.omf.ngo/', 'omf.png', ['c1745ad3b966d1e8896fa8cb97b6a50cb013b372f30eedc79e8f4dab1431ed89'], 1000000, 1000000),
-        new Charity('https://www.thereagentproject.org/', 'reagent.png', ['cb1d8eda5075d06fd6065112280e1b77faf0e304df472f7fc0f05c378507e2da2018'], 100000, 100000)
+        new Charity('https://www.thereagentproject.org/', 'reagent.png', ['cb1d8eda5075d06fd6065112280e1b77faf0e304df472f7fc0f05c378507e2da2018'], 100000, 100000),
+        new Charity('https://talklife.co/', 'talklife.png', ['5388afd4af1200de8eb3bc4fa918598e71187e7ca8b0616b1be8593fb81f6d91'], 50000, 50000, false)
       ];
 
       const charitiesSupported = charities.length;
@@ -84,7 +86,11 @@
         return txLinks;
       }
 
-      function formatMoneyDiv(totalDonation, donatedSoFar) {
+      function formatMoneyDiv(totalDonation, donatedSoFar, isNonprofit) {
+        if (!isNonprofit) {
+          return "<div class='money' data-toggle='tooltip' data-placement='bottom' data-original-title='Not a nonprofit; supported on a basis of social benefit'>" + formatNumber(totalDonation, '$') + "†</div>";
+
+        }
         if(totalDonation === donatedSoFar) {
           return "<div class='money'>" + formatNumber(totalDonation, '$') + "</div>";
         }
@@ -98,7 +104,7 @@
         $("#remaining-usd").text('$' + fundedSoFar.toLocaleString());
 
         charities.forEach(function(charity) {
-          $('.charities').append("<div class='charity'><a href='" + charity.websiteLink + "' class='logo'><img src='img/" + charity.logoFileName + "' /></a>" + formatMoneyDiv(charity.totalDonation, charity.donatedSoFar) + "<div class='links'>" + formatTxs(charity.txIds) + " <a href='" + charity.websiteLink + "'>website</a></div></div> ");
+          $('.charities').append("<div class='charity'><a href='" + charity.websiteLink + "' class='logo'><img src='img/" + charity.logoFileName + "' /></a>" + formatMoneyDiv(charity.totalDonation, charity.donatedSoFar, charity.isNonprofit) + "<div class='links'>" + formatTxs(charity.txIds) + " <a href='" + charity.websiteLink + "'>website</a></div></div> ");
         });
       });
     </script>
