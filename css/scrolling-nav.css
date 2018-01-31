@@ -79,8 +79,13 @@ body {
 
 .charities {
   text-align: center;
-  margin-left: -20px;
-  margin-right: -20px;
+}
+
+@media (min-width: 768px) {
+  .charities {
+    margin-left: -20px;
+    margin-right: -20px;
+  }
 }
 
 .charity {
