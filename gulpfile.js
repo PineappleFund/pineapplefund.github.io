@@ -27,7 +27,7 @@ gulp.task('default', ['copy']);
 gulp.task('browserSync', function() {
   browserSync.init({
     server: {
-      baseDir: ''
+      baseDir: './'
     },
   })
 })
