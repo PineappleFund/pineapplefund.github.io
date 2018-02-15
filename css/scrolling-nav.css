@@ -5,84 +5,59 @@
  */
 
 header {
-  padding: 224px 0 170px;
-  background: url(../img/pineapple-header.jpg);
+  background: url(../img/pineapple-header-new.jpg);
   background-size: cover;
-  background-position: 0 -50px;
+  background-position: center bottom;
+  border-bottom: 3px solid #FFCB18;
 }
-
-@media (max-width: 992px) {
-  header {
-    background-position: 0 0;
-  }
-}
-
-@media (max-width: 650px) {
-  header {
-    padding: 140px 0 50px;
-    background-position: 0 0;
-  }
-}
-
 section {
   padding: 45px 0;
 }
-
 body {
   color: #1f631a;
 }
-
 .text-shadow {
-    text-shadow: 1px 1px 5px #215018;
+  text-shadow: 1px 1px 5px #215018;
 }
-
 .brand-logo {
-  height: 65px;
+  height: 55px;
   margin-top: -5px;
 }
-
 .bg-dark.bg-dark {
-  background-color: #FFCB18 !important;
+  background-color: #fff !important;
+  border-bottom: 3px solid #FFCB18;
 }
-
 .navbar-dark .navbar-brand {
   color: #1f631a !important;
   font-size: 1.5rem;
   margin-top: 5px;
 }
-
 .bg-primary {
-  background-color: #EAF8BF !important;
+  background-color: #FAFFCF !important;
 }
-
 .metrics {
   margin: 25px 0;
 }
-
 .metrics .col-sm {
   background-color: #FFCB18;
   margin: 0 10px 0 0;
   padding: 15px 20px;
 }
-
 .metrics-number {
   font-size: 1.5rem;
   color: #FFF;
   font-weight: bold;
   display: block;
 }
-
 .metrics-convert {
   color: #FFF;
   display: block;
 }
-
 .charities {
   text-align: center;
   margin-left: -20px;
   margin-right: -20px;
 }
-
 .charity {
   display: inline-block;
   width: 160px;
@@ -90,51 +65,48 @@ body {
   text-align: center;
   vertical-align: top;
 }
-
 .charity .logo {
-  display:flex;
-  justify-content:center;
-  align-items:center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 160px;
   height: 80px;
   margin-bottom: 10px;
 }
-
 .charity img {
   max-width: 160px;
   max-height: 70px;
 }
-
 .charity .money {
-  margin: 5px 0;
-  background-color: #FFCB18;
-  text-align: center;
+    margin: 5px 0;
+    background-color: #FFCB18;
+    text-align: center;
+    color: #000000;
+    font-weight: bold;
+    padding: 3px 10px;
+    border-radius: 1px;
 }
-
 .charity .links {
   font-size: 0.75rem;
 }
-
 .charity .links a {
   margin-right: 4px;
 }
-
 #faq .q {
   font-size: 1.15rem;
   margin: 0 0 10px 0;
 }
-
 #faq .a {
   margin: 0 0 15px 25px;
 }
-
 blockquote {
   background: #f9f9f9;
-  border-left: 10px solid #ccc;
+  border-left: 5px solid #ccc;
+  border-radius: 5px;
   margin: 1.5em 10px;
-  padding: 0.5em 10px;
+  padding: 2.6em;
   quotes: "\201C""\201D""\2018""\2019";
-  color: #555;
+  color: #353535;
 }
 blockquote:before {
   color: #ccc;
@@ -144,16 +116,39 @@ blockquote:before {
   margin-right: 0.25em;
   vertical-align: -0.4em;
 }
-
 #banner {
-    background-color: #add23d;
-    font-size: 22px;
-    padding: 20px 0;
+  background-color: #f2f2f2;
+  font-size: 22px;
+  padding: 20px 0;
   text-align: center;
-
+  border-bottom: 1px solid #eee;
+}
+#banner a {
+  color: #4F4F4F !important;
+  font-weight: bold;
+}
+.h_shad {
+  padding: 240px 0 160px;
+  background-color: rgba(0,0,0,0.58);
+}
+.navbar-dark .navbar-nav .nav-link {
+  color: #5c913b !important;
+  text-transform: uppercase;
+  border-bottom: 1px solid #eee;
+}
+.navbar-dark .navbar-nav .nav-link:focus, .navbar-dark .navbar-nav .nav-link:hover {
+  color: #000000 !important;
+}
+.navbar-dark .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0, 0, 0, 0.9)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E") !important;
+}
+footer {
+    background-color: #FFCB18;
 }
 
-#banner a {
-  color: #FFF !important;
-  font-weight: bold;
+@media (max-width: 650px) {
+.h_shad {
+  background-color: rgba(0,0,0,0.68);
+  padding: 140px 0 50px;
+}
 }
