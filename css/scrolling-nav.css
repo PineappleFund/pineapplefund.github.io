@@ -5,22 +5,38 @@
  */
 
 header {
-  padding: 224px 0 170px;
-  background: url(../img/pineapple-header.jpg);
+  padding: 240px 0 180px;
+  width: 100%;
+  background: url(../img/pfbg.jpg);
+
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
   background-size: cover;
-  background-position: 0 -50px;
 }
 
-@media (max-width: 992px) {
-  header {
-    background-position: 0 0;
-  }
+header h1 {
+    background-color: #ffcb18;
+    display: inline-block;
+    padding: 3px 12px;
+}
+
+header p.lead {
+    background-color: #ffcb18;
+    display: inline-block;
+    padding: 3px 8px;
 }
 
 @media (max-width: 650px) {
   header {
-    padding: 140px 0 50px;
-    background-position: 0 0;
+    padding: 130px 0 240px 0;
+  }
+
+  header h1 {
+    font-size: 20pt;
+  }
+  header p.lead {
+    font-size: 12pt;
   }
 }
 
@@ -32,10 +48,6 @@ body {
   color: #1f631a;
 }
 
-.text-shadow {
-    text-shadow: 1px 1px 5px #215018;
-}
-
 .brand-logo {
   height: 65px;
   margin-top: -5px;
@@ -43,6 +55,10 @@ body {
 
 .bg-dark.bg-dark {
   background-color: #FFCB18 !important;
+}
+
+.navbar {
+  box-shadow: 0px 3px 6px rgba(0,0,0,0.4);
 }
 
 .navbar-dark .navbar-brand {
