@@ -9,7 +9,6 @@ header {
   width: 100%;
   background: url(../img/pfbg.jpg);
 
-  background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
