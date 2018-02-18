@@ -85,7 +85,7 @@
         new Charity('http://www.snowlovers.org/', 'snowlovers.png', ['2b5d297fdd6a939c90b61c34840159ffc4320e64a8120577a0cfb8ed3a146c68'], 50000, 50000, false),
         new Charity('https://www.iamsogal.com/', 'sogal.png', ['e19260d993a327d6c79664c8fddf09cca50b8002f22547db0242e8563a380bb7'], 1000000, 1000000),
         new Charity('http://www.trgt.org/', 'trgt.png', ['71cf0e50161c6c208613c04dde6efdbf3c6638c6656c5e152e734691373fcde0'], 250000, 250000),
-        new Charity('https://www.kde.org/', 'kde.svg', ['66cca28043868afede49f28c5395105e3f02d811026cf13c8db78965f629a750'], 100000, 100000),
+        new Charity('https://www.kde.org/', 'kde.svg', ['66cca28043868afede49f28c5395105e3f02d811026cf13c8db78965f629a750', 'f76321c0998f8a2e8ad1e08659c7759c84560bfc92d6cd0bf3b126127137e3f1'], 200000, 200000),
         new Charity('https://nuzzlesandco.org/', 'nuzzles.png', ['22e8bf4281a65e05ce7846f6d8dfe13c5ed9f990832d8161474c399e32deca9c'], 1000000, 250000),
         new Charity('http://wwww.newincentives.org', 'newincentives.png', ['51ea94aa922eed9764f82a2ede102295974df84a90a5f1309334045da7f9ec3f'], 250000, 100000)
       ];
@@ -94,11 +94,11 @@
 
       function formatNumber(value, unit) {
         if(unit === '$') {
-          value = value.toString();
-          if(value.length > 6) {
-            value = value.replace(/000000$/, ' million');
+
+          if (value > 999999) {
+            return '$' + (value / 1000000).toString() + ' million';
           } else {
-            value = value.replace(/000$/, 'k');
+            value = value.toString().replace(/000$/, 'k');
           }
           return '$' + value;
         } else if(unit === 'BTC') {
