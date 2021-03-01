@@ -177,3 +177,8 @@ blockquote:before {
   color: #FFF !important;
   font-weight: bold;
 }
+
+.twentyone {
+  opacity: 0.5;
+  font-size: 75%;
+}
